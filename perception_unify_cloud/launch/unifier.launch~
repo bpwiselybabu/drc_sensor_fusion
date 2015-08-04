@@ -1,0 +1,11 @@
+<launch>
+      <arg name="offline" default="true" />
+      
+      <node type="sensor_fusion_node" pkg="perception_unify_cloud" name="cloud_unifier" output="log"  unless="$(arg offline)">
+      		  <param name="laser_topic" value="/kin_odom_pub/laser_assembled" />
+      </node>
+      
+      <node type="sensor_fusion_drcsim" pkg="perception_unify_cloud" name="cloud_unifier" output="log"  if="$(arg offline)">
+      		  <param name="laser_topic" value="/kin_odom_pub/laser_assembled" />
+      </node>
+</launch>
