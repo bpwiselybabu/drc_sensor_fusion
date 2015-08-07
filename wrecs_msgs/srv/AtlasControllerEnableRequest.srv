@@ -1,0 +1,13 @@
+#Service for requesting the starting or stopping of a controller's operation
+
+###########################
+#The Request
+###########################
+bool   start           #Signifies if this request is to start (true) or stop (false) the controller
+
+---
+###########################
+#The Response
+###########################
+bool   success         #Signifies if the request was successfully completed (true) or not (false)
+string message         #A descriptive message about the result of the controller enable request 

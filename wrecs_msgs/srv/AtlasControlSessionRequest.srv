@@ -1,0 +1,18 @@
+#Service for requesting the starting or stopping of a control session
+
+###########################
+#The Request
+###########################
+bool   start           #Signifies if this request is to start (true) or stop (false)
+uint32 pump_pressure   #If the request is to start, what pump pressure? (See below)
+
+uint32 NO_PRESSURE=0   #Start the control session with no pump pressure
+uint32 LOW_PRESSURE=1  #Start the control session with low pump pressure
+uint32 HIGH_PRESSURE=2 #Start the control session with high pump pressure
+
+---
+###########################
+#The Response
+###########################
+bool   success         #Signifies if the request was successfully completed (true) or not (false)
+string message         #A descriptive message about the result of the control session request 

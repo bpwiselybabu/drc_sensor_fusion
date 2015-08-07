@@ -1,0 +1,11 @@
+int32    index
+float64  x
+float64  y
+float64  z
+float64  yaw
+float64  nx
+float64  ny
+float64  lift_height
+float64  swing_height
+bool     right
+bool     valid

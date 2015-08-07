@@ -1,0 +1,8 @@
+geometry_msgs/Vector3 CoM
+geometry_msgs/Vector3 CoP
+
+geometry_msgs/Vector3 LeftFeetPos
+geometry_msgs/Vector3 RightFeetPos
+
+geometry_msgs/Vector3 LeftFeetCoP
+geometry_msgs/Vector3 RightFeetCoP

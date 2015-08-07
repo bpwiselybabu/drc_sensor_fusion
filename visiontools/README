@@ -1,0 +1,20 @@
+visiontools
+===========
+Catkinized verison of Strasdats vision tools
+
+Notes
+-----
+* removed dependency on pangolin
+* added graph plotting with gnuplot
+
+Original Comments
+-----------------
+Small library with various (visualization) tools in the context of computer 
+vision. To be used together with OpenGL, OpenCV, Eigen and pangolin.
+
+
+For a installation guideline, please refer to 
+
+https://github.com/strasdat/ScaViSLAM
+
+for now.

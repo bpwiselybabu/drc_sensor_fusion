@@ -1,0 +1,17 @@
+<package>
+  <name>sophus</name>
+  <version>0.0.0</version>
+  <description>Sophus</description>
+  <maintainer email="ben@dot.com">Benzun</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>eigen</build_depend>
+
+  <run_depend>eigen</run_depend>
+
+  <export>
+  </export>
+</package>

@@ -1,0 +1,10 @@
+bool leftHand
+bool drop
+float32 setShake
+float32 time
+float32 frequency
+float32 amplitude
+float32 finger1
+float32 finger2
+float32 finger3
+float32 armAngle

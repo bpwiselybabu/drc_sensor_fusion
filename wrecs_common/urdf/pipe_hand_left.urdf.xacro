@@ -1,0 +1,8 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="irobot_left_hand_simple" >
+ <xacro:include filename="$(find wrecs_common)/urdf/pipe_hand.urdf.xacro" />
+
+  <xacro:pipe_hand side="left_hand"/>
+     
+
+</robot>
+

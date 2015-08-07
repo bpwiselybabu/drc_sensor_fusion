@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="armh_handle">
+
+<!-- Changes done by BEN from the vanila handle descriptor
+  added $side param for a new xacro that joins the hand to the robot. 
+     If you want collisions added - Talk to BEN
+-->
+<!-- roslaunch urdf_tutorial display.launch model:=handle.urdf gui:=True -->
+<!-- rosrun xacro xacro.py handle_urdf.xacro > handle.urdf -->
+<!-- tip: use measurements from solid to find the origins and length -->
+
+<xacro:property name="flex_joint_length" value=".016" />
+<xacro:property name="flex_joint_steps" value="9" />
+<xacro:property name="proximal_link_length" value=".062" />
+<xacro:property name="pi" value="3.14" />
+<xacro:property name="half_pi" value="1.57" />
+
+<xacro:macro name="pipe_hand" params="side">
+
+<link name="${side}/base_link">
+  <visual>
+    <geometry>
+      <cylinder length="0.17" radius="0.03"/>
+    </geometry>
+    <origin rpy="0 0 0" xyz="0 0 0.15"/>
+    <material name="darkgray">
+      <color rgba="0.2 0.2 0.2 1"/>
+    </material>
+  </visual>
+    <!-- collision>
+    <origin rpy="0 0 0" xyz="0 0 0.04"/>
+    <geometry>
+      <box size="0.13 0.14 0.08"/>
+    </geometry>
+  </collision -->
+</link>
+
+
+</xacro:macro>
+</robot>

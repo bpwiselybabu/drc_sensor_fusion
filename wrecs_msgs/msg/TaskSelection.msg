@@ -1,0 +1,11 @@
+uint32 task
+
+#Valid States
+uint32 TASK_DRILL=0
+uint32 TASK_VALVE=1
+uint32 TASK_DOOR=2
+uint32 TASK_STEP=3
+uint32 TASK_DEBRIS=4
+uint32 TASK_PLUG=5
+uint32 TASK_EGRESS=6
+uint32 TASK_DRIVE=7

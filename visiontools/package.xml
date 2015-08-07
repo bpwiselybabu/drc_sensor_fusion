@@ -1,0 +1,21 @@
+<package>
+  <name>visiontools</name>
+  <version>0.0.0</version>
+  <description>VisionTools</description>
+  <maintainer email="ben@dot.com">Benzun</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>eigen</build_depend>
+  <build_depend>opencv</build_depend>
+  <build_depend>sophus</build_depend>
+
+  <run_depend>eigen</run_depend>
+  <run_depend>opencv</run_depend>
+  <run_depend>sophus</run_depend>
+
+  <export>
+  </export>
+</package>

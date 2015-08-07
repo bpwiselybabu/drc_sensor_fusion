@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="atlas" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+       
+  <xacro:include filename="$(find wrecs_common)/urdf/atlas_skeleton_v3.urdf" />
+  <xacro:include filename="$(find multisense_description)/urdf/multisense.urdf" />
+  <xacro:include filename="$(find wrecs_common)/urdf/robotiq_hand_simplified.xacro" />
+
+
+ <xacro:s-model_articulated prefix="r_"/>
+   
+   <joint name="r_hand_joint" type="fixed">
+    <origin rpy="3.14 0 0" xyz="0 -0.215 0.013"/>
+        <parent link="r_hand" />
+        <child link="r_palm" />
+        </joint>
+        
+    <xacro:s-model_articulated prefix="l_"/>
+   
+   <joint name="l_hand_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.215 0.013"/>
+        <parent link="l_hand" />
+        <child link="l_palm" />
+        </joint>
+   
+           
+    <link name="l_tof_camera_frame">
+        
+     </link>
+    <joint name="tf_sentis_tof" type="fixed">
+    <origin rpy="-1.57 1.57 0" xyz="0 0.113 -0.010"/>
+        <parent link="l_wrist" />
+        <child link="l_tof_camera_frame" />
+        </joint>     
+      
+        
+ 
+   
+</robot>

@@ -1,0 +1,37 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="atlas" >
+
+  <xacro:include filename="$(find wrecs_common)/urdf/atlas_v4.urdf" />
+    <xacro:include filename="$(find wrecs_common)/urdf/multisense_sl_v4.urdf" />
+  <xacro:include filename="$(find wrecs_common)/urdf/robotiq_hand_simplified.urdf.xacro" />
+
+
+  <!-- Set the initial hand position and orientation by changing 'rpy' and 'xyz'
+  to mach the values in your actual robot. -->
+  <xacro:robotiq_hand prefix="l_" parent="l_hand" reflect="-1">
+    <origin rpy="3.14159 0 3.14159" xyz="-0.00125 0.17 0.01"/>
+  </xacro:robotiq_hand>
+  <xacro:robotiq_hand prefix="r_" parent="r_hand" reflect="1">
+    <origin rpy="3.14159 3.14159 0" xyz="-0.00125 -0.17 0.01"/>
+  </xacro:robotiq_hand>
+
+  <link name="head_root"/>
+ <joint name="head_link_joint" type="fixed">
+        <parent link="head_root" />
+        <child link="head" />
+        </joint>    
+
+  <link name="l_depth_cam"/>
+  <joint name="l_depth_cam_joint" type="fixed">
+    <origin rpy="-1.91906585 0 0" xyz="0 0.22 0.10"/> <!-- -1.57 + 0.5235 -->
+    <parent link="l_hand" />
+    <child link="l_depth_cam" />
+    </joint>
+
+  <link name="r_depth_cam"/>
+  <joint name="r_depth_cam_joint" type="fixed">
+    <origin rpy="1.91906585 0 0" xyz="0 -0.22 0.10"/> <!-- -1.57 + 0.5235 -->
+    <parent link="r_hand" />
+    <child link="r_depth_cam" />
+    </joint>
+
+</robot>

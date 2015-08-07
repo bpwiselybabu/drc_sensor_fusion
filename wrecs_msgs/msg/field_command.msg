@@ -1,0 +1,61 @@
+Header header
+
+# This combines some of the BDI & joint state commands into a single message
+
+# Items related to direct joint control
+#
+bool         sendJointCommand
+# which set of gain parameters should be used
+# 0 - Default gains - scaled based on velocity
+# -1, 32 - Don't set gains
+bool        set_gain_set
+int8        gain_set
+
+# which control loop to use
+# NULL - accepts joints commands and just re-sends them to the BDI interface
+
+bool         set_control_mode
+uint8        control_mode
+uint8        CONTROL_MODE_TRAPEZOIDAL_VELOCITY = 0
+uint8        CONTROL_MODE_NULL = 1
+uint8        CONTROL_MODE_SF_STATIC = 2
+uint8        CONTROL_MODE_SF_MANIP = 3
+uint8        CONTROL_MODE_SF_EXPERIMENTAL = 4
+uint8	       CONTROL_MODE_MANIP_STAND_PREP = 5
+uint8        CONTROL_MODE_CGLIU_CAR = 6
+uint8        CONTROL_MODE_ARM_CALIB = 7
+uint8        CONTROL_MODE_ARM_STICTION = 8
+
+#uint8        CONTROL_MODE_EW_APPROACH = 8
+#uint8        CONTROL_MODE_HM_WALK = 9
+#uint8        CONTROL_MODE_SF_TAU = 10
+#uint8        CONTROL_MODE_SF_WALK = 8
+#uint8        CONTROL_MODE_SF_BAL = 9
+
+# read the parameter values from files
+bool read_params_from_files
+
+# specify who controlls upper body during BDI walk/stand/step
+uint8        upper_body_control
+uint8        UPPER_BODY_NO_CHANGE = 0
+uint8        UPPER_BODY_WE_CONTROL = 1
+uint8        UPPER_BODY_BDI_CONTROL = 2
+
+# velocities should be positive
+bool[28]    setThisJoint
+float32[28]  position
+float32[28]  velocity
+float32[28]  effort
+
+
+# Items related to the BDI interface
+bool         setBDImode
+uint8        BDImode
+bool         BDIstart
+uint8        BDIstart_mode
+uint8        PUMP_OFF = 0
+uint8        PUMP_ON = 1
+bool         BDIstop
+bool         BDIlog
+bool         setBDIPumpPressure
+uint16       BDI_desired_pressure
