@@ -41,6 +41,7 @@ void cb_tf_broadcaster(const geometry_msgs::TransformStamped::ConstPtr& msg)
 	br->sendTransform(tf::StampedTransform(transform,ros::Time::now(), "cmu_root", "left_camera_optical_sweep_fixed"));
 }
 
+/*
 void cb_cmu_pose(const wrecs_msgs::sf_state_estConstPtr& pose)
 {
 	if(pose->contact_state==wrecs_msgs::sf_state_est::Egress)
@@ -48,7 +49,7 @@ void cb_cmu_pose(const wrecs_msgs::sf_state_estConstPtr& pose)
 	else
 		g_egress=false;
 }
-
+*/
 int main(int argc, char **argv)
 {
 	ros::init(argc,argv,"sensor_fusion");
@@ -64,7 +65,7 @@ int main(int argc, char **argv)
 	pcl::PCLPointCloud2 output;
 	ros::Subscriber camera_model = nh.subscribe("/ocu/multisense/left/camera_info", 5, cb_left_camera_info);
 	ros::Subscriber assembled_transform = nh.subscribe("/ocu/laser_assembled/transform", 5, cb_tf_broadcaster);
-	ros::Subscriber contact_mode = nh.subscribe("/ocu/cmu/robot_pose", 5, cb_cmu_pose);
+	//ros::Subscriber contact_mode = nh.subscribe("/ocu/cmu/robot_pose", 5, cb_cmu_pose);
 	ros::Publisher cloud_pub = nh.advertise<pcl::PCLPointCloud2> (std::string("/ocu/fused_color_cloud"), 1);
 	image_transport::ImageTransport it(nh);
   	image_transport::Publisher pub_histeq = it.advertise("/ocu/multisense/left/hist_eq_image", 1);

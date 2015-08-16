@@ -18,7 +18,7 @@
 #include <tf_conversions/tf_eigen.h>
 #include <eigen_conversions/eigen_msg.h>
 #include <pcl/common/transforms.h>
-#include <wrecs_common/WRECS_Names.h>
+#include <perception_common/WRECS_Names.h>
 #include <pcl/registration/ndt.h>
 #include <pcl/filters/approximate_voxel_grid.h>
 #include <pcl/octree/octree.h>
