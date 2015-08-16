@@ -12,7 +12,7 @@
 #include <string>
 #include <map>
 #include <queue>
-#include <visiontools/gnuplot-iostream.h>
+#include <perception_common/gnuplot-iostream.h>
 
 class TimePlot
 {

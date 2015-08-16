@@ -10,7 +10,7 @@
 #include <dynamic_reconfigure/StrParameter.h>
 #include <dynamic_reconfigure/BoolParameter.h>
 #include <std_msgs/Float64.h>
-#include <wrecs_common/WRECS_Names.h>
+#include <perception_common/WRECS_Names.h>
 
 
 /************************************************** CONSTANTS *******************************************/

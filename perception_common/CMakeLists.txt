@@ -29,12 +29,10 @@ find_package(catkin REQUIRED COMPONENTS roscpp
 					pcl_conversions
                                         pcl_ros
 					std_msgs
-					wrecs_msgs
 					message_filters
 					multisense_ros
-					visiontools
-					wrecs_common
-					tf_conversions)
+					tf_conversions
+					wrecs_msgs)
 
 include_directories(include)
 include_directories(SYSTEM ${PCL_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
@@ -45,7 +43,7 @@ add_definitions(${PCL_DEFINITIONS})
 catkin_package(
    INCLUDE_DIRS include
    LIBRARIES ${PROJECT_NAME}
-   CATKIN_DEPENDS roscpp cv_bridge image_transport pcl_conversions std_msgs message_filters multisense_ros wrecs_common
+   CATKIN_DEPENDS roscpp cv_bridge image_transport pcl_conversions std_msgs message_filters multisense_ros 
    DEPENDS opencv pcl
 )
 
@@ -56,8 +54,8 @@ add_library(${PROJECT_NAME} src/MultisensePointCloud.cpp
 			    src/ImageHelper.cpp
 			    src/PointCloudHelper.cpp
 			    src/MultisenseControl.cpp
-                            src/SampleCADModels.cpp
-                            src/MultisenseBackend.cpp)
+                            src/SampleCADModels.cpp)
+#                            src/MultisenseBackend.cpp)
 										   
 target_link_libraries(${PROJECT_NAME} ${PCL_LIBRARIES} ${catkin_LIBRARIES} )
 ##cotire(${PROJECT_NAME})
@@ -72,8 +70,8 @@ add_executable(test_image src/test_image.cpp)
 target_link_libraries(test_image ${PROJECT_NAME})
 ##cotire(test_image)
 
-add_executable(test_control src/test_MultisenseControl.cpp)
-target_link_libraries(test_control ${PROJECT_NAME})
+#add_executable(test_control src/test_MultisenseControl.cpp)
+#target_link_libraries(test_control ${PROJECT_NAME})
 ##cotire(test_control)
 
 add_executable(test_organizedcloud src/test_organizedRGBD.cpp)
@@ -101,15 +99,15 @@ add_executable(test_lasercloud_drcsim src/test_laser.cpp)
 target_link_libraries(test_lasercloud_drcsim ${PROJECT_NAME}_drcsim)
 ##cotire(test_lasercloud_drcsim)
 
-add_executable(test_image_drcsim src/test_image.cpp)
-target_link_libraries(test_image_drcsim ${PROJECT_NAME}_drcsim)
+#add_executable(test_image_drcsim src/test_image.cpp)
+#target_link_libraries(test_image_drcsim ${PROJECT_NAME}_drcsim)
 ##cotire(test_image_drcsim )
 
-add_executable(multisense_backend src/MultisenseBackend.cpp)
-target_link_libraries(multisense_backend ${PROJECT_NAME})
+#add_executable(multisense_backend src/MultisenseBackend.cpp)
+#target_link_libraries(multisense_backend ${PROJECT_NAME})
 
-add_executable(test_control_drcsim src/test_MultisenseControl.cpp)
-target_link_libraries(test_control_drcsim ${PROJECT_NAME}_drcsim)
+#add_executable(test_control_drcsim src/test_MultisenseControl.cpp)
+#target_link_libraries(test_control_drcsim ${PROJECT_NAME}_drcsim)
 ##cotire(test_control_drcsim)
 
 add_executable(test_sample_cad_models src/test_sample_cad_models.cpp)
@@ -123,7 +121,7 @@ target_link_libraries(test_organizedcloud_drcsim ${PROJECT_NAME}_drcsim)
 ENDIF()
 
 ## Mark executables and/or libraries for installation
-install(TARGETS ${PROJECT_NAME} multisense_backend
+install(TARGETS ${PROJECT_NAME} 
    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

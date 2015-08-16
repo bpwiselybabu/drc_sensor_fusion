@@ -8,7 +8,7 @@
 
 #include <perception_common/MultisensePointCloud.h>
 #include <pcl_conversions/pcl_conversions.h>
-#include <wrecs_common/WRECS_Names.h>
+#include <perception_common/WRECS_Names.h>
 #include <tf_conversions/tf_eigen.h>
 #include <pcl/common/transforms.h>
 

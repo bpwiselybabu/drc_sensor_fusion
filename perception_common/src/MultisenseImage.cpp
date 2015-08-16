@@ -13,7 +13,7 @@
 #include <perception_common/MultisenseImage.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
-#include <wrecs_common/WRECS_Names.h>
+#include <perception_common/WRECS_Names.h>
 
 
 namespace drc_perception {

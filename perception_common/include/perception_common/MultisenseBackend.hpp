@@ -6,7 +6,7 @@
 # include "ros/ros.h"
 # include "ros/subscriber.h"
 # include "ros/publisher.h"
-# include "wrecs_common/WRECS_Names.h"
+# include "perception_common/WRECS_Names.h"
 # include "MultisenseControl.h"
 #define MULTISENSE_BACKEND_NAME "Multisense Backend"
 
