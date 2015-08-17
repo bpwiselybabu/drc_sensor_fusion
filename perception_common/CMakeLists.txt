@@ -4,7 +4,7 @@ set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/drc/wrecs_common/CMake")
 
 SET(CMAKE_BUILD_TYPE RelWithDebInfo)
 
-set(CMAKE_CXX_FLAGS "-std=c++0x -g -march=native -mno-avx -Werror ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "-std=c++0x -g -march=native -mno-avx ${CMAKE_CXX_FLAGS}")
 
 IF(NOT GAZEBO_SIMULATION)
   SET(GAZEBO_SIMULATION ON)
